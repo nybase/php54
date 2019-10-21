@@ -12,6 +12,6 @@ RUN yum install -y epel-release ; yum install -y curl wget tzdata net-tools psmi
       -e 's/^;request_terminate_timeout =.*/request_terminate_timeout=60/g' \
       -e 's/^;request_slowlog_timeout =.*/request_slowlog_timeout=3/g' \
       -e 's/www-data/nobody/g' -e 's/apache/nobody/g' -e 's/^php_admin_value/;php_admin_value/g'  /etc/php-fpm.d/www.conf ;\
-      bash -c 'echo -e "expose_php=Off\n;upload_max_filesize=80M\npost_max_size=80M\nmemory_limit=256M\ndate.timezone=Asia/Shanghai" > /etc/php.d/zzzz.ini' 
+      bash -c 'echo -e "expose_php=Off\nupload_max_filesize=80M\npost_max_size=80M\nmemory_limit=256M\ndate.timezone=Asia/Shanghai" > /etc/php.d/zzzz.ini' 
 
 CMD ["/sbin/php-fpm", "-y","/etc/php-fpm.conf","-F"]
