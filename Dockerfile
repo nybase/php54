@@ -11,7 +11,7 @@ RUN yum install -y epel-release ; yum install -y curl wget tzdata net-tools psmi
       php-fpm php-bcmath php-devel php-mysqlnd php-pgsql php-gd php-cli php-mbstring \
       php-ldap php-soap php-xml php-xmlrpc php-pear \
       php-pecl-redis php-pecl-amqp php-pecl-imagick php-pecl-memcache php-pecl-memcached \
-      php-pecl-mongo php-pecl-mongodb php-pecl-libsodium ;\
+      php-pecl-mongo php-pecl-mongodb php-pecl-libsodium glibc-static ;\
       sed -i -e 's/^listen =.*/listen = 0.0.0.0:9000/g' -e 's/^listen.allowed_clients/;listen.allowed_clients/g' \
       -e 's/^;catch_workers_output/catch_workers_output/g' \
       -e 's/^;request_terminate_timeout =.*/request_terminate_timeout=60/g' \
